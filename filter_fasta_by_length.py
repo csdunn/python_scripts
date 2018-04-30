@@ -19,9 +19,10 @@ def get_args():
     # parse the arguments
     return parser.parse_args()
 
-short_sequences = [] # Setup an empty list
+# Setup an empty list
+short_sequences = []
 for record in SeqIO.parse("cor6_6.gb", "genbank"):
-    if len(record.seq) < 300 :
+    if len(record.seq) < parser.num :
         # Add this record to our list
         short_sequences.append(record)
 
